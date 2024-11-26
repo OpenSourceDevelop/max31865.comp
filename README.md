@@ -13,8 +13,8 @@ halcompile --install max31865.comp
 
 
 example:
-	loadrt max31865
-	addf max31865.update servo-thread
-	setp max31865.r_ref 430
-	setp max31865.rtd_nominal 100
-	setp max31865.wire_mode 3
+* loadrt max31865
+* addf max31865.update servo-thread
+* setp max31865.r_ref 430
+* setp max31865.rtd_nominal 100
+* setp max31865.wire_mode 3
