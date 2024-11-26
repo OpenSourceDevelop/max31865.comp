@@ -1,21 +1,20 @@
 # max31865.comp
-a max31865 modul for LinuxCNC
 
-Info:
-* SPI-Initialisierung: Passt das SPI-Protokoll für den MAX31865 an (8-Bit Transfers, Mode 0).
-* Widerstands-zu-Temperatur-Umrechnung: Implementiert die Callendar-Van Dusen-Gleichung, die typisch für RTD-Sensoren ist.
-* Fehlerbehandlung: Setzt ein Bit bei einem Fehler (z. B. Drahtbruch).
-* Parameter: Ermöglicht die Anpassung an PT100 oder PT1000 und Referenzwiderstände.
+## A MAX31865 Module for LinuxCNC
 
+This module provides an interface for the MAX31865 RTD-to-Digital Converter within a LinuxCNC environment. It enables accurate temperature readings using RTD sensors such as PT100 and PT1000. The implementation handles SPI communication, temperature conversion, and fault detection.
 
-halcompile:
-* halcompile --install max31865.comp
+---
 
+### Features
+- **SPI Initialization**: Configures the SPI protocol for the MAX31865 (8-bit transfers, SPI mode 0).
+- **Resistance-to-Temperature Conversion**: Implements the Callendar-Van Dusen equation for precise temperature calculations based on RTD characteristics.
+- **Fault Detection**: Detects errors (e.g., open wire) and sets a fault bit for easy monitoring.
+- **Flexible Configuration**: Adjustable parameters for reference resistance, nominal RTD resistance, and wire configuration (2-wire, 3-wire, or 4-wire).
 
+---
 
-example:
-* loadrt max31865
-* addf max31865.update servo-thread
-* setp max31865.r_ref 430
-* setp max31865.rtd_nominal 100
-* setp max31865.wire_mode 3
+### Installation
+To compile and install the component:
+```bash
+halcompile --install max31865.comp
