@@ -1,1 +1,7 @@
+loadrt max31865
+addf max31865.update servo-thread
 
+# Configure parameters
+setp max31865.r_ref 430         # Reference resistance in Ohms (e.g., 430 for PT100)
+setp max31865.rtd_nominal 100   # Nominal resistance at 0°C (100 for PT100, 1000 for PT1000)
+setp max31865.wire_mode 3       # RTD configuration: 2 = 2-wire, 3 = 3-wire, 4 = 4-wire
